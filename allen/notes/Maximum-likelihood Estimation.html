@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <base href='https://onlinecourses.science.psu.edu/stat504/node/28' />
+    <title></title>
+    <script type="text/javascript" src="/stat504/misc/jquery.js?c"></script>
+<script type="text/javascript" src="/stat504/misc/drupal.js?c"></script>
+<script type="text/javascript" src="/stat504/sites/all/modules/mathjax/mathjax.js?c"></script>
+<script type="text/javascript" src="/stat504/sites/all/modules/thickbox/thickbox.js?c"></script>
+<script type="text/javascript" src="/stat504/sites/all/modules/extlink/extlink.js?c"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/stat504/", "mathjax": { "path": "cdn" }, "thickbox": { "close": "Close", "next": "Next \x3e", "prev": "\x3c Prev", "esc_key": "or Esc Key", "next_close": "Next / Close on last", "image_count": "Image !current of !total" }, "extlink": { "extTarget": "_blank", "extClass": "ext", "extSubdomains": 1, "extExclude": "", "extInclude": "(statprogram)", "extAlert": 0, "extAlertText": "This link will take you to an external web site. We are not responsible for their content.", "mailtoClass": "mailto" } });
+//--><!]]>
+</script>
+        <meta name='robots' content='noindex, nofollow' />
+    <link rel='shortcut icon' href='/stat504/sites/onlinecourses.science.psu.edu.stat504/files/online_ed2_favicon.ico' type='image/x-icon' />
+    <link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/book/book.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/node/node.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/system/defaults.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/system/system.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/system/system-menus.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/modules/user/user.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/cck/theme/content-module.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/thickbox/thickbox.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/thickbox/thickbox_ie.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/extlink/extlink.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/cck/modules/fieldgroup/fieldgroup.css?c" />
+<link type="text/css" rel="stylesheet" media="all" href="/stat504/sites/all/modules/print/css/print.css?c" />
+<link type="text/css" rel="stylesheet" media="screen" href="/stat504/sites/all/modules/iconizer/files_icons.css?c" />
+  </head>
+  <body>
+        <div class="print-logo"><img class='print-logo' src='/stat504/sites/all/themes/online_ed2/logo.png' alt='STAT 504' id='logo' />
+</div>
+    <div class="print-site_name">Published on <em>STAT 504</em> (<a href="https://onlinecourses.science.psu.edu/stat504">https://onlinecourses.science.psu.edu/stat504</a>)</div>
+    <p />
+    <div class="print-breadcrumb"><a href="/stat504/">Home</a> &gt; 1.5 - Maximum-likelihood (ML) Estimation </div>
+    <hr class="print-hr" />
+    <h1 class="print-title"></h1>
+    <div class="print-content"><div id="node-28" class="section-2">
+  <h1 class="book-heading">1.5 - Maximum-likelihood (ML) Estimation </h1>
+  <p>Suppose that an experiment consists of <em>n</em> = 5 independent Bernoulli trials, each having probability of success <em>p</em>. Let <em>X</em> be the total number of successes in the trials, so that \(X\sim Bin(5,p)\). If the outcome is <em>X</em> = 3, the likelihood is</p>
+<p style="text-align: center;">\begin{align}<br />L(p;x) &amp;= \dfrac{n!}{x!(n-x)!} p^x(1-p)^{n-x}\\<br />&amp;= \dfrac{5!}{3!(5-3)!}p^3 (1-p)^{5-3}\\<br />&amp; \propto p^3(1-p)^2\\<br />\end{align}</p>
+<p>where the constant at the beginning is ignored. A graph of \(L(p;x)=p^3(1-p)^2\)&nbsp;over the unit interval <em>p</em> ∈ (0, 1) looks like this:</p>
+<p style="text-align: center;"><img src="/stat504/sites/onlinecourses.science.psu.edu.stat504/files/lesson01a/02_image_21.gif" alt="plot" width="277" height="158" /></p>
+<p>It’s interesting that this function reaches its maximum value at <em>p</em> = .6. An intelligent person would have said that if we observe 3 successes in 5 trials, a reasonable estimate of the long-run proportion of successes <em>p</em> would be 3/5 = .6.</p>
+<p>This example suggests that it may be reasonable to estimate an unknown parameter θ by the value for which the likelihood function <em>L</em>(θ ; <em>x</em>) is largest. This approach is called <em>maximum-likelihood (ML) estimation</em>. We will denote the value of θ that maximizes the likelihood function by \(\hat{\theta}\), read “theta hat.”\(\hat{\theta}\) is called the <em>maximum-likelihood estimate (MLE)</em> of θ.</p>
+<p>Finding MLE’s usually involves techniques of differential calculus. To maximize <em>L</em>(θ ; <em>x</em>) with respect to θ:</p>
+<ul>
+<li>first calculate the derivative of <em>L</em>(θ ; <em>x</em>) with respect to θ, </li>
+<li>set the derivative equal to zero, and </li>
+<li>solve the resulting equation for θ. </li>
+</ul>
+<p>These computations can often be simplified by maximizing the<em> loglikelihood function</em>,</p>
+<p style="text-align: center;">&nbsp;\(l(\theta;x)=\text{log}L(\theta;x)\),</p>
+<p>where “log” means natural log (logarithm to the base e). Because the natural log is an increasing function, maximizing the loglikelihood is the same as maximizing the likelihood. The loglikelihood often has a much simpler form than the likelihood and is usually easier to differentiate.</p>
+<p>In Stat 504 you will not be asked to derive MLE’s by yourself. In most of the probability models that we will use later in the course (logistic regression, loglinear models, etc.) no explicit formulas for MLE’s are available, and we will have to rely on computer packages to calculate the MLE’s for us. For the simple probability models we have seen thus far, however, explicit formulas for MLE’s are available and are given next.</p>
+<h3>ML for Bernoulli trials</h3>
+<p>If our experiment is a single Bernoulli trial and we observe <em>X</em> = 1 (success) then the likelihood function is <em>L</em>(<em>p</em> ; <em>x</em>) = <em>p</em> . This function reaches its maximum at \(\hat{p}=1\). If we observe <em>X</em> = 0 (failure) then the likelihood is <em>L</em>(<em>p</em> ; <em>x</em>) = 1 − <em>p</em> , which reaches its maximum at \(\hat{p}=0\). Of course, it is somewhat silly for us to try to make formal inferences about θ on the basis of a single Bernoulli trial; usually multiple trials are available.</p>
+<p>Suppose that <em>X</em> = (<em>X</em><sub>1</sub>,<em> </em><em>X</em><sub>2</sub>, . . .,<em> </em><em>X<sub>n</sub></em>) represents the outcomes of <em>n</em> independent Bernoulli trials, each with success probability <em>p</em> . The likelihood for <em>p</em> based on <em>X</em> is defined as the joint probability distribution of <em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, . . . ,<em> X<sub>n</sub></em>. Since <em>X</em><sub>1</sub>,<em> X</em><sub>2</sub>, . . . ,<em> X<sub>n</sub></em> are iid random variables, the joint distribution is</p>
+<p style="text-align: center;">\(L(p;x)\approx f(x;p)=\prod\limits_{i=1}^n f(x_i;p)=\prod\limits_{i=1}^n p^x(1-p)^{1-x}\)</p>
+<p>Differentiating the log of <em>L</em>(<em>p</em> ; <em>x</em>) with respect to <em>p</em> and setting the derivative to zero shows that this function achieves a maximum at \(\hat{p}=\sum\limits_{i=1}^n x_i/n\). Since&nbsp; \(\sum\limits_{i=1}^n x_i\) is the total number of successes observed in the <em>n</em> trials, \(\hat{p}\) is the observed proportion of successes in the <em>n</em> trials. We often call \(\hat{p}\) the sample proportion to distinguish it from <em>p</em> , the “true” or “population” proportion. Note that in some textbooks the authors may use π instead of <em>p</em>. For repeated Bernoulli trials, the MLE \(\hat{p}\) is the sample proportion of successes.</p>
+<h3>ML for Binomial</h3>
+<p>Suppose that <em>X</em> is an observation from a binomial distribution, <em>X</em> ∼ Bin(<em>n</em>, <em>p</em> ), where <em>n</em> is known and <em>p</em> is to be estimated. The likelihood function is</p>
+<p style="text-align: center;">\(L(p;x)=\dfrac{n!}{x!(n-x)!} p^x(1-p)^{n-x}\)</p>
+<p>which, except for the factor \(\dfrac{n!}{x!(n-x)!}\), is identical to the likelihood from <em>n</em> independent Bernoulli trials with \(x=\sum\limits^n_{i=1} x_i\). But since the likelihood function is regarded as a function only of the parameter <em>p</em>, the factor \(\dfrac{n!}{x!(n-x)!}\)is a fixed constant and does not affect the MLE. Thus the MLE is again \(\hat{p}=x/n\), the sample proportion of successes.</p>
+<p>You get the same value by maximizing the <em>binomial loglikelihood function&nbsp;</em></p>
+<p style="text-align: center;">\(l(p;x)=k+x\text{ log }p+(n-x)\text{ log }(1-p)\)</p>
+<p>where <em>k</em> is a constant that does not involve the      parameter <em>p</em>. In the future we will omit the constant,      because it's statistically irrelevant.</p>
+<p>The fact that the MLE based on <em>n</em> independent Bernoulli random variables and the MLE based on a single binomial random variable are the same is not surprising, since the binomial is the result of <em>n</em> independent Bernoulli trials anyway. In general, whenever we have repeated, independent Bernoulli trials with the same probability of success <em>p</em> for each trial, the MLE will always be the sample proportion of successes. This is true regardless of whether we know the outcomes of the individual trials <em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, . . . ,<em> X<sub>n</sub></em>, or just the total number of successes for all trials \(X=\sum\limits^n_{i=1} X_i\).</p>
+<p>Suppose now that we have a sample of iid binomial random variables. For example, suppose that <em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, . . . ,<em> X</em><sub>10</sub> are an iid sample from a binomial distribution with <em>n</em> = 5 and <em>p</em> unknown. Since each <em>X<sub>i</sub></em> is actually the total number of successes in 5 independent Bernoulli trials, and since the <em>X<sub>i</sub></em>’s are independent of one another, their sum \(X=\sum\limits^{10}_{i=1} X_i\) is actually the total number of successes in 50 independent Bernoulli trials. Thus \(X\sim Bin(50,p)\) and the MLE is \(\hat{p}=x/n\), the observed proportion of successes across all 50 trials. Whenever we have independent binomial random variables with a common <em>p</em> , we can always add them together to get a single binomial random variable.</p>
+<p>Adding the binomial random variables together produces no loss of information about <em>p</em> <em>if the model is true</em>. But collapsing the data in this way may limit our ability to diagnose model failure, i.e. to check whether the binomial model is really appropriate.</p>
+<h4>ML for Poisson</h4>
+<p>Suppose that <em>X </em>= (<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>, . . . ,<em> X<sub>n</sub></em>) are iid observations from a Poisson distribution with unknown parameter λ. The likelihood function is:</p>
+<p style="text-align: center;">\begin{align}<br />L(\lambda;x) &amp;= \prod\limits_{i=1}^n f(x_i;\lambda) \\<br />&amp;= \prod\limits_{i=1}^n \dfrac{\lambda^{x_i}e^{-\lambda}}{x_i!}\\<br />&amp;= \dfrac{\lambda^{\sum\limits^n_{i=1}x_i} e^{-n\lambda}}{x_1!x_2! \cdots x_n!}\\<br />\end{align}</p>
+<p>By differentiating the log of this function with respect to λ, that is by differentiating the <em>Poisson loglikelihood function</em></p>
+<p style="text-align: center;">\(l(\lambda;x)=\sum\limits^n_{i=1}x_i \text{ log }\lambda-n\lambda\)</p>
+<p>ignoring the constant terms that do not depend on λ, one can show that the maximum is achieved at \(\hat{\lambda}=\sum\limits^n_{i=1}x_i/n\). Thus, for a Poisson sample, the MLE for λ is just the sample mean.</p>
+<p>Next: Likelihood-based confidence intervals and tests.&nbsp;</p>
+  </div>
+</div>
+    <div class="print-footer">
+</div>
+    <hr class="print-hr" />
+    <div class="print-source_url"><strong>Source URL:</strong> <a href="https://onlinecourses.science.psu.edu/stat504/node/28">https://onlinecourses.science.psu.edu/stat504/node/28</a></div>
+    <div class="print-links"></div>
+  </body>
+</html>
