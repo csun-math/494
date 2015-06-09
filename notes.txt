@@ -1,5 +1,0 @@
-show that clusters are meaningful
-show that clusters are predictive with full feature set
-compare cluster labels as classifiers vs classifiers trained on full feature set
-
-average # of terms for each of clusters to see if it’s highly differentiated
